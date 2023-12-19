@@ -15,5 +15,6 @@ namespace WindowMetrics.Data
         }
 
         public DbSet<WindowMetrics.Models.Client> Client { get; set; } = default!;
+        public DbSet<WindowMetrics.Models.User> User { get; set; } = default!;
     }
 }

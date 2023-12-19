@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WindowMetrics.Data;
 
@@ -11,9 +12,11 @@ using WindowMetrics.Data;
 namespace WindowMetrics.Migrations
 {
     [DbContext(typeof(WindowMetricsContext))]
-    partial class WindowMetricsContextModelSnapshot : ModelSnapshot
+    [Migration("20231219222841_UserTable")]
+    partial class UserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,42 +54,6 @@ namespace WindowMetrics.Migrations
                     b.HasKey("ClientId");
 
                     b.ToTable("Client");
-                });
-
-            modelBuilder.Entity("WindowMetrics.Models.User", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
-
-                    b.Property<int>("ClientId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("MobileNo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserId");
-
-                    b.HasIndex("ClientId");
-
-                    b.ToTable("User");
-                });
-
-            modelBuilder.Entity("WindowMetrics.Models.User", b =>
-                {
-                    b.HasOne("WindowMetrics.Models.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Client");
                 });
 #pragma warning restore 612, 618
         }
