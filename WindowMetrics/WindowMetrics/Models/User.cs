@@ -12,7 +12,11 @@ namespace WindowMetrics.Models
         [ForeignKey("Client")]
         public int ClientId { get; set; } // Foreign Key with Client Table
 
-        public string Name { get; set; } // Remove 'required' keyword
+        public required string Name { get; set; }
+
+        public required string UserName { get; set; }
+
+        public required string Password { get; set; }
 
         public string? MobileNo { get; set; } = null;
 
