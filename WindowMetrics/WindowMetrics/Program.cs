@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using WindowMetrics.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<WindowMetricsContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WindowMetricsContext") ?? throw new InvalidOperationException("Connection string 'WindowMetricsContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
