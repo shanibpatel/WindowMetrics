@@ -57,7 +57,7 @@ namespace WindowMetrics.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserId,ClientId,Name,UserName,Password,MobileNo")] User user)
+        public async Task<IActionResult> Create([Bind("UserId,ClientId,Name,MobileNo")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace WindowMetrics.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UserId,ClientId,Name,UserName,Password,MobileNo")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("UserId,ClientId,Name,MobileNo")] User user)
         {
             if (id != user.UserId)
             {

@@ -5,9 +5,7 @@
     ViewData["Title"] = "Login";
 }
 
-<style>
-    <!-- Your styles remain unchanged -->
-</style>
+<link rel="stylesheet" href="~/css/site.css" />
 
 <div class="login-container animate-in">
     <h2 class="text-center mb-4">Login</h2>
@@ -15,13 +13,14 @@
     @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "needs-validation", novalidate = "novalidate" }))
     {
         <div class="form-group text-center">
-            <label asp-for="UserName" class="control-label">UserName:</label>
+            <label asp-for="UserName" class="control-label required">Username:</label>
             <input asp-for="UserName" class="form-control" required />
             <span asp-validation-for="UserName" class="text-danger"></span>
         </div>
 
         <div class="form-group text-center">
-            <label asp-for="Password" class="control-label">Password:</label>
+
+            <label asp-for="Password" class="control-label required">Password:</label>
             <input asp-for="Password" type="password" class="form-control" required />
             <span asp-validation-for="Password" class="text-danger"></span>
         </div>
@@ -32,11 +31,11 @@
     }
 
     @* Display validation summary *@
-    <div asp-validation-summary="All" class="text-danger mt-3"></div>
+    @* <div asp-validation-summary="All" class="text-danger mt-3"></div> *@
 </div>
 
 @section Scripts {
     <script>
-        <!-- Your scripts remain unchanged-- >
+        // Your scripts remain unchanged
     </script>
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WindowMetrics")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a69efd31bfdd3d58d72ac886b4a1c986790d7cd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5cf46d694a6d249f6aea409a2338da6c9feacb0e")]
 [assembly: System.Reflection.AssemblyProductAttribute("WindowMetrics")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WindowMetrics")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
